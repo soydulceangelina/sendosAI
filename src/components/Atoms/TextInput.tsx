@@ -1,6 +1,6 @@
 import React from "react";
-import { View, TextInput, TextInputProps, Text } from "react-native";
-// import Icon from "react-native-vector-icons";
+import { View, TextInput, TextInputProps } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   getSecureTextEntry,
   getPlaceholder,
@@ -21,7 +21,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({
   ...props
 }) => {
   return (
-    <View className="relative mb-4">
+    <View>
       <TextInput
         className={`border border-gray-100 py-5 pl-5 rounded-xl bg-white ${
           showIcon ? "pr-10" : "pr-5"
@@ -32,19 +32,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({
         onChangeText={onChangeValue}
         {...props}
       />
-      {/* {showIcon && (
-        <Icon
-          name={getIconName(type)}
-          size={20}
-          color="gray"
-          style={{
-            position: "absolute",
-            right: 10,
-            top: "50%",
-            transform: [{ translateY: -10 }],
-          }}
-        />
-      )} */}
+      {/* {showIcon && <Ionicons name="map" size={20} color="#6A6A6A" />} */}
     </View>
   );
 };
