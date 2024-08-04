@@ -7,14 +7,15 @@ module.exports = {
   ],
   theme: {
     colors: {
-      white: "#FEFAF1",
-
-      "main": "#6078B8",
-      "secondary": "#FBB110",
+      red: "#dc2626",
+      white: "#ffffff",
+      main: "#6078B8",
+      secondary: "#FBB110",
       gray: {
-        100: "#454545",
-        50: "#6A6A6A",
-        10: "#B6B6B6",
+        300: "#454545",
+        200: "#6A6A6A",
+        100: "#B6B6B6",
+        50: "#FEFAF1",
       },
     },
     extend: {},
