@@ -3,8 +3,8 @@ import { View, Text } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { user } from "../../utils/userDB";
 import { auth } from "../../utils/auth";
+import useAuth from "../../hooks/useAuth";
 import Button from "../Atoms/Button";
 import CustomTextInput from "../Atoms/TextInput";
 
@@ -17,6 +17,7 @@ const schema = yup
 
 export default function LoginForm() {
   const [authError, setAuthError] = useState("");
+  const { login } = useAuth();
 
   const {
     control,
@@ -26,7 +27,7 @@ export default function LoginForm() {
 
   const onSubmit = (data: FormData) => {
     setAuthError("");
-    auth(user, setAuthError, data);
+    auth(setAuthError, data, login);
   };
 
   return (
