@@ -1,14 +1,12 @@
+import { useState } from "react";
 import { View, Text } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-import Button from "../Atoms/Button";
-import CustomTextInput from "../Atoms/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
-type FormData = {
-  email: string;
-  password: string;
-};
+import { user } from "../../utils/userDB";
+import { auth } from "../../utils/auth";
+import Button from "../Atoms/Button";
+import CustomTextInput from "../Atoms/TextInput";
 
 const schema = yup
   .object({
@@ -18,14 +16,17 @@ const schema = yup
   .required();
 
 export default function LoginForm() {
+  const [authError, setAuthError] = useState("");
+
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({ resolver: yupResolver(schema) });
+  } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
+    setAuthError("");
+    auth(user, setAuthError, data);
   };
 
   return (
@@ -78,6 +79,7 @@ export default function LoginForm() {
         onPress={handleSubmit(onSubmit)}
         isValid={true}
       />
+      {authError && <Text className="text-red text-xs mt-1">{authError}</Text>}
     </View>
   );
 }

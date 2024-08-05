@@ -1,11 +1,13 @@
-export const user = {
+const user = {
   email: "test@gmail.com",
-  password: "123456"
-}
+  password: "123456",
+};
 
-export const userDetails = {
+const userDetails = {
   email: "test@gmail.com",
   username: "Test",
   firstName: "Test",
   lastName: "User",
-}
+};
+
+export { user, userDetails };
