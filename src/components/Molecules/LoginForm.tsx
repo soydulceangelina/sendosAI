@@ -31,7 +31,10 @@ export default function LoginForm() {
   };
 
   return (
-    <View className="p-8">
+    <View className="w-full">
+      <Text className="mb-5 ml-4 text-3xl font-bold text-gray-300">
+        Ingresa
+      </Text>
       <View className="mb-5">
         <Controller
           control={control}
@@ -71,6 +74,7 @@ export default function LoginForm() {
           )}
           name="password"
         />
+        <Text className="text-xs mt-1">Contraseña no válida.</Text>
         {errors.password && (
           <Text className="text-red text-xs mt-1">Contraseña no válida.</Text>
         )}

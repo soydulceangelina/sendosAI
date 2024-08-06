@@ -12,11 +12,11 @@ export default function Button({
 }) {
   return (
     <TouchableOpacity
-      className={`py-5 rounded-xl ${isValid ? "bg-main" : "bg-gray-100"}`}
+      className={`py-4 rounded-xl ${isValid ? "bg-main" : "bg-gray-100"}`}
       disabled={!isValid}
       onPress={onPress}
     >
-      <Text className="text-white text-center">{title}</Text>
+      <Text className="text-white text-center font-bold text-xl tracking-widest">{title}</Text>
     </TouchableOpacity>
   );
 }

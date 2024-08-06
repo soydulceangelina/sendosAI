@@ -5,9 +5,12 @@ const user = {
 
 const userDetails = {
   email: "test@gmail.com",
-  username: "Test",
-  firstName: "Test",
-  lastName: "User",
+  username: "Carlos",
+  firstName: "Carlos",
+  lastName: "Mendoza",
+  currentJob: "Asistente de tienda",
+  experience: 6,
+  skills: 9
 };
 
 export { user, userDetails };

@@ -1,10 +1,10 @@
 import { SafeAreaView } from "react-native";
-import LoginForm from "../components/Molecules/LoginForm";
+import LoginLayout from "../components/Organisms/LoginLayout";
 
 export default function LoginScreen() {
   return (
     <SafeAreaView>
-      <LoginForm />
+      <LoginLayout />
     </SafeAreaView>
   );
 }
