@@ -1,3 +1,4 @@
+import './gesture-handler';
 import { NavigationContainer } from "@react-navigation/native";
 import NavigationStack from "./src/navigation/NavigationStack";
 import { AuthProvider } from "./src/context/AuthContext";

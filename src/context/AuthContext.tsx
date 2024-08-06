@@ -26,8 +26,8 @@ function AuthProvider({ children }) {
   };
 
   const logout = async () => {
-    setAuth(undefined);
     await deleteItem("userSession");
+    setAuth(undefined);
   };
 
   const valueContext = {
