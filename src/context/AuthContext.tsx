@@ -1,4 +1,5 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
+import { saveItem, getItem, deleteItem } from "../services/storage";
 
 const AuthContext = createContext({
   auth: undefined,
@@ -9,13 +10,24 @@ const AuthContext = createContext({
 function AuthProvider({ children }) {
   const [auth, setAuth] = useState(undefined);
 
-  const login = (user: FormData) => {
+  useEffect(() => {
+    const loadSession = async () => {
+      const session = await getItem("userSession");
+      if (session) {
+        setAuth(JSON.parse(session));
+      }
+    };
+    loadSession();
+  }, []);
+
+  const login = async (user: FormData) => {
     setAuth(user);
+    await saveItem("userSession", JSON.stringify(user));
   };
 
-  
-  const logout = () => {
+  const logout = async () => {
     setAuth(undefined);
+    await deleteItem("userSession");
   };
 
   const valueContext = {

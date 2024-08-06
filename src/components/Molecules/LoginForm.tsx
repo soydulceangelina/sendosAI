@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { auth } from "../../utils/auth";
+import { auth } from "../../services/auth";
 import useAuth from "../../hooks/useAuth";
 import Button from "../Atoms/Button";
 import CustomTextInput from "../Atoms/TextInput";
