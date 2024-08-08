@@ -33,7 +33,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({
         {...props}
       />
       {showIcon && (
-        <View className="absolute right-4 top-3 transform -translate-y-1/2">
+        <View className="absolute right-4 top-4 transform -translate-y-1/2">
           <Icons name={getIconName(type)} size={24} color="#6A6A6A" />
         </View>
       )}

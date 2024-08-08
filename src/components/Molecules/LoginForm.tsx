@@ -53,7 +53,7 @@ export default function LoginForm() {
           name="email"
         />
         {errors.email && (
-          <Text className="text-red text-base">
+          <Text className="text-red text-base mt-1">
             Correo electrónico no válido
           </Text>
         )}
@@ -76,9 +76,9 @@ export default function LoginForm() {
         />
         <View className="flex flex-row items-center justify-between">
           {errors.password && (
-            <Text className="text-red text-base">Contraseña no válida.</Text>
+            <Text className="text-red text-base mt-1">Contraseña no válida.</Text>
           )}
-          <Text className="text-base text-gray-200 ml-auto">Olvidé mi contraseña.</Text>
+          <Text className="text-base text-gray-200 ml-auto mt-1">Olvidé mi contraseña.</Text>
         </View>
       </View>
       <Button
