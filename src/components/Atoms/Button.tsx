@@ -12,7 +12,7 @@ export default function Button({
 }) {
   return (
     <TouchableOpacity
-      className={`py-4 rounded-xl ${isValid ? "bg-main" : "bg-gray-100"}`}
+      className={`w-full py-4 rounded-xl ${isValid ? "bg-main" : "bg-gray-100"}`}
       disabled={!isValid}
       onPress={onPress}
     >

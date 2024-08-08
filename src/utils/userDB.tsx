@@ -1,10 +1,6 @@
 const user = {
   email: "test@gmail.com",
   password: "123456",
-};
-
-const userDetails = {
-  email: "test@gmail.com",
   username: "Carlos",
   firstName: "Carlos",
   lastName: "Mendoza",
@@ -13,4 +9,4 @@ const userDetails = {
   skills: 9
 };
 
-export { user, userDetails };
+export { user };
