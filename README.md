@@ -2,6 +2,7 @@
 
 ## About the project
 
+use NODE js 20
 Created with [Expo](https://expo.dev/) and [TypeScript](https://www.typescriptlang.org). 
 Application to generate your career path based on your current position
 
