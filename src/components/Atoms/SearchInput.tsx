@@ -4,7 +4,7 @@ import {
   TextInput,
   FlatList,
   Text,
-  TouchableOpacity,
+  TouchableHighlight,
 } from "react-native";
 import Icons from "./Icons";
 import { jobs } from "../../utils/jobsDB";
@@ -13,6 +13,7 @@ export default function SearchInput() {
   const [query, setQuery] = useState("");
   const [filteredOptions, setFilteredOptions] = useState(jobs);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [btnColor, setBtnColor] = useState("#B6B6B6");
 
   const handleSelect = (item: string) => {
     setQuery(item);
@@ -27,7 +28,6 @@ export default function SearchInput() {
     setQuery(text);
     setShowDropdown(true);
   };
-
   return (
     <View className="relative w-full">
       <TextInput
@@ -42,30 +42,17 @@ export default function SearchInput() {
           data={filteredOptions}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => handleSelect(item)}>
-              <Text
-                style={{
-                  padding: 10,
-                  borderBottomWidth: 1,
-                  borderBottomColor: "#ccc",
-                }}
-              >
-                {item}
-              </Text>
-            </TouchableOpacity>
+            <TouchableHighlight
+              underlayColor="#6078B8"
+              onPressIn={() => setBtnColor("#ffffff")}
+              onPressOut={() => setBtnColor("#B6B6B6")}
+              className=""
+              onPress={() => handleSelect(item)}
+            >
+              <Text style={{color: btnColor}} className="p-2 text-base">{item}</Text>
+            </TouchableHighlight>
           )}
-          style={{
-            position: "absolute",
-            top: 50,
-            left: 0,
-            right: 0,
-            backgroundColor: "#fff",
-            borderColor: "#ccc",
-            borderWidth: 1,
-            borderRadius: 8,
-            maxHeight: 200,
-            zIndex: 100,
-          }}
+          className="absolute border border-gray-100 rounded-xl top-14 left-0 right-0 bg-gray-50"
         />
       )}
       <View className="absolute right-4 top-4 transform -translate-y-1/2">

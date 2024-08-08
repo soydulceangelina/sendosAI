@@ -24,8 +24,10 @@ export default function UserDashboard() {
           </Text>
         </View>
       </View>
-      <SearchInput />
-      <View className="">
+      <View className="z-50 w-full">
+        <SearchInput />
+      </View>
+      <View className="z-0">
         <Image
           className="h-80 w-80 my-20"
           source={require("../../../assets/brecha.png")}

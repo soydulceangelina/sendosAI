@@ -1,5 +1,4 @@
 const jobs = [
-  "Asistente de tienda",
   "Ayudante/Cajero",
   "Encargado de turno",
   "Administrador de personal",
