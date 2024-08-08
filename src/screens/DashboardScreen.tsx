@@ -7,8 +7,8 @@ export default function DashboardScreen({ navigation }) {
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableOpacity onPress={() => {console.log('hola')}}>
-          <Icons name="settings" size={30} color="#454545" />
+        <TouchableOpacity className="mr-4" onPress={() => navigation.openDrawer()}>
+          <Icons name="settings" size={35} color="#454545" />
         </TouchableOpacity>
       ),
     });
