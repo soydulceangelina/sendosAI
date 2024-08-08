@@ -53,7 +53,7 @@ export default function LoginForm() {
           name="email"
         />
         {errors.email && (
-          <Text className="text-red text-xs mt-1">
+          <Text className="text-red text-base">
             Correo electrónico no válido
           </Text>
         )}
@@ -74,17 +74,21 @@ export default function LoginForm() {
           )}
           name="password"
         />
-        <Text className="text-xs mt-1">Contraseña no válida.</Text>
-        {errors.password && (
-          <Text className="text-red text-xs mt-1">Contraseña no válida.</Text>
-        )}
+        <View className="flex flex-row items-center justify-between">
+          {errors.password && (
+            <Text className="text-red text-base">Contraseña no válida.</Text>
+          )}
+          <Text className="text-base text-gray-200 ml-auto">Olvidé mi contraseña.</Text>
+        </View>
       </View>
       <Button
         title="Inicia sesión"
         onPress={handleSubmit(onSubmit)}
         isValid={true}
       />
-      {authError && <Text className="text-red text-xs mt-1">{authError}</Text>}
+      {authError && (
+        <Text className="text-red text-base mt-1">{authError}</Text>
+      )}
     </View>
   );
 }

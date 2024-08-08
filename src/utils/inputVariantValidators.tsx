@@ -30,7 +30,7 @@ const getPlaceholder = (type: string): string => {
 const getIconName = (type: string): string => {
   switch (type) {
     case "email":
-      return "envelope";
+      return "user";
     case "password":
       return "lock";
     case "username":

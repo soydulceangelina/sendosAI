@@ -1,6 +1,6 @@
 import React from "react";
 import { View, TextInput, TextInputProps } from "react-native";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Icons from "./Icons";
 import {
   getSecureTextEntry,
   getPlaceholder,
@@ -21,7 +21,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({
   ...props
 }) => {
   return (
-    <View>
+    <View className="relative">
       <TextInput
         className={`border border-gray-100 py-4 pl-4 rounded-xl bg-white ${
           showIcon ? "pr-10" : "pr-4"
@@ -32,7 +32,11 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({
         onChangeText={onChangeValue}
         {...props}
       />
-      {showIcon && <FontAwesome name={getIconName(type)} size={20} color="#6A6A6A" />}
+      {showIcon && (
+        <View className="absolute right-4 top-3 transform -translate-y-1/2">
+          <Icons name={getIconName(type)} size={24} color="#6A6A6A" />
+        </View>
+      )}
     </View>
   );
 };

@@ -1,6 +1,6 @@
 import { TouchableOpacity } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import Entypo from "@expo/vector-icons/Entypo";
+import Icons from "../components/Atoms/Icons";
 import DashboardScreen from "../screens/DashboardScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 
@@ -20,7 +20,7 @@ export default function NavigationDrawer() {
                 console.log("hola");
               }}
             >
-              <Entypo name="dots-three-horizontal" size={30} color="#454545" />
+              <Icons name="settings" size={30} color="#454545" />
             </TouchableOpacity>
           ),
         }}

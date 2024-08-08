@@ -1,6 +1,6 @@
 import { SafeAreaView, TouchableOpacity } from "react-native";
 import { useEffect } from "react";
-import Entypo from "@expo/vector-icons/Entypo";
+import Icons from "../components/Atoms/Icons";
 import UserDashboard from "../components/Organisms/UserDashboard";
 
 export default function DashboardScreen({ navigation }) {
@@ -8,7 +8,7 @@ export default function DashboardScreen({ navigation }) {
     navigation.setOptions({
       headerRight: () => (
         <TouchableOpacity onPress={() => {console.log('hola')}}>
-          <Entypo name="dots-three-horizontal" size={30} color="#454545" />
+          <Icons name="settings" size={30} color="#454545" />
         </TouchableOpacity>
       ),
     });
