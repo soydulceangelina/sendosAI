@@ -1,11 +1,21 @@
 import { View, Image, Text } from "react-native";
+import { useState } from "react";
+import useSelectedOptions from "../../hooks/useSelectedOptions";
 import Button from "../Atoms/Button";
 import SearchInput from "../Atoms/SearchInput";
 import { user } from "../../utils/userDB";
+import JobPath from "../Molecules/JobPath";
 
 export default function UserDashboard() {
+  const [query, setQuery] = useState("");
+  const [path, setPath] = useState(undefined);
+
+  const generatePath = () => {
+    setPath(useSelectedOptions(query));
+  };
+
   return (
-    <View className="p-8 w-full flex items-center">
+    <View className="p-8 h-screen bg-white w-full flex items-center relative">
       <View className="w-full flex flex-row items-center justify-between mb-6">
         <View>
           <Text className="font-bold text-xl text-gray-300">
@@ -25,15 +35,25 @@ export default function UserDashboard() {
         </View>
       </View>
       <View className="z-50 w-full">
-        <SearchInput />
+        <SearchInput query={query} setQuery={setQuery} />
       </View>
       <View className="z-0">
-        <Image
-          className="h-80 w-80 my-20"
-          source={require("../../../assets/brecha.png")}
+        {path ? (
+          <JobPath jobPath={path}/>
+        ) : (
+          <Image
+            className="h-100 w-100 my-20"
+            source={require("../../../assets/brecha.png")}
+          />
+        )}
+      </View>
+      <View className="w-full absolute bottom-40 transform -translate-y-1/2">
+        <Button
+          title="Crear brecha"
+          onPress={() => generatePath()}
+          isValid={true}
         />
       </View>
-      <Button title="Crear brecha" onPress={() => {}} isValid={true} />
     </View>
   );
 }

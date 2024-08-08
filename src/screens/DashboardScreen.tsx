@@ -14,7 +14,7 @@ export default function DashboardScreen({ navigation }) {
     });
   }, [navigation]);
   return (
-    <SafeAreaView className="h-screen bg-white ">
+    <SafeAreaView>
       <UserDashboard />
     </SafeAreaView>
   );

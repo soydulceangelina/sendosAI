@@ -9,8 +9,7 @@ import {
 import Icons from "./Icons";
 import { jobs } from "../../utils/jobsDB";
 
-export default function SearchInput() {
-  const [query, setQuery] = useState("");
+export default function SearchInput({query, setQuery}) {
   const [filteredOptions, setFilteredOptions] = useState(jobs);
   const [showDropdown, setShowDropdown] = useState(false);
   const [btnColor, setBtnColor] = useState("#B6B6B6");
